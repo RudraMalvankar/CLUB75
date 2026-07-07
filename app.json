@@ -7,9 +7,7 @@
     "userInterfaceStyle": "automatic",
     "scheme": "club75",
     "icon": "./assets/icons/icon.png",
-    "plugins": [
-      "expo-router"
-    ],
+    "plugins": ["expo-router"],
     "ios": {
       "supportsTablet": true
     },
@@ -23,6 +21,9 @@
     },
     "web": {
       "favicon": "./assets/icons/favicon.png"
+    },
+    "experiments": {
+      "tsconfigPaths": true
     }
   }
 }

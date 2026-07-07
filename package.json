@@ -8,7 +8,13 @@
     "android": "expo start --android",
     "ios": "expo start --ios",
     "web": "expo start --web",
-    "typecheck": "tsc --noEmit"
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix",
+    "format": "prettier . --write",
+    "format:check": "prettier . --check",
+    "typecheck": "tsc --noEmit",
+    "check": "npm run format:check && npm run lint && npm run typecheck",
+    "prepare": "husky"
   },
   "dependencies": {
     "expo": "~57.0.3",
@@ -27,7 +33,21 @@
     "react-native-worklets": "0.10.0"
   },
   "devDependencies": {
+    "@commitlint/cli": "^21.2.0",
+    "@commitlint/config-conventional": "^21.2.0",
     "@types/react": "~19.2.2",
+    "ajv": "^8.20.0",
+    "eslint": "^9.39.4",
+    "eslint-config-expo": "~57.0.0",
+    "eslint-config-prettier": "^10.1.8",
+    "globals": "^17.7.0",
+    "husky": "^9.1.7",
+    "lint-staged": "^16.4.0",
+    "prettier": "^3.9.4",
     "typescript": "~6.0.3"
+  },
+  "lint-staged": {
+    "*.{js,cjs,mjs,ts,tsx,json,md}": "prettier --write",
+    "*.{js,cjs,mjs,ts,tsx}": "eslint --fix"
   }
 }
