@@ -4,10 +4,31 @@
     "slug": "club75",
     "version": "1.0.0",
     "orientation": "portrait",
+    "backgroundColor": "#F8FAFC",
     "userInterfaceStyle": "automatic",
     "scheme": "club75",
     "icon": "./assets/icons/icon.png",
-    "plugins": ["expo-router"],
+    "plugins": [
+      "expo-router",
+      "expo-font",
+      [
+        "expo-splash-screen",
+        {
+          "backgroundColor": "#F8FAFC",
+          "image": "./assets/branding/splash-logo.png",
+          "imageWidth": 160
+        }
+      ],
+      "expo-system-ui",
+      [
+        "expo-navigation-bar",
+        {
+          "enforceContrast": false,
+          "hidden": false,
+          "style": "light"
+        }
+      ]
+    ],
     "ios": {
       "supportsTablet": true
     },
@@ -20,7 +41,8 @@
       "predictiveBackGestureEnabled": false
     },
     "web": {
-      "favicon": "./assets/icons/favicon.png"
+      "favicon": "./assets/icons/favicon.png",
+      "bundler": "metro"
     },
     "experiments": {
       "tsconfigPaths": true

@@ -38,6 +38,11 @@ export type TypographyScale = {
   micro: TextStyle;
 };
 
+export type FontFamilyTokens = {
+  preferred: string;
+  sans: string;
+};
+
 export type FontWeightTokens = {
   light: TextStyle["fontWeight"];
   regular: TextStyle["fontWeight"];
@@ -105,11 +110,22 @@ export type LayoutTokens = {
   touchTargetMin: number;
 };
 
+export type IconTokens = {
+  strokeWidth: number;
+  size: {
+    sm: number;
+    md: number;
+    lg: number;
+    xl: number;
+  };
+};
+
 export type ThemeTokens = {
   id: ThemeMode;
   isDark: boolean;
   statusBar: StatusBarTone;
   colors: ColorTokens;
+  fontFamilies: FontFamilyTokens;
   typography: TypographyScale;
   fontWeights: FontWeightTokens;
   spacing: SpacingTokens;
@@ -117,6 +133,7 @@ export type ThemeTokens = {
   elevation: ElevationTokens;
   animation: AnimationTokens;
   layout: LayoutTokens;
+  icons: IconTokens;
 };
 
 export type ThemeContextValue = {

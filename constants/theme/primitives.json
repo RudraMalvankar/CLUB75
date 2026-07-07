@@ -1,0 +1,147 @@
+{
+  "preferredFontFamily": "Outfit",
+  "fallbackFontFamily": "System",
+  "fontWeights": {
+    "light": "300",
+    "regular": "400",
+    "medium": "500",
+    "semiBold": "600",
+    "bold": "700",
+    "extraBold": "800"
+  },
+  "fontScale": {
+    "displayXL": { "fontSize": 48, "lineHeight": 56, "fontWeight": "extraBold" },
+    "displayL": { "fontSize": 40, "lineHeight": 48, "fontWeight": "bold" },
+    "displayM": { "fontSize": 34, "lineHeight": 42, "fontWeight": "bold" },
+    "headingXL": { "fontSize": 30, "lineHeight": 38, "fontWeight": "bold" },
+    "headingL": { "fontSize": 24, "lineHeight": 32, "fontWeight": "semiBold" },
+    "headingM": { "fontSize": 20, "lineHeight": 28, "fontWeight": "semiBold" },
+    "title": { "fontSize": 18, "lineHeight": 26, "fontWeight": "medium" },
+    "bodyLarge": { "fontSize": 16, "lineHeight": 24, "fontWeight": "regular" },
+    "body": { "fontSize": 14, "lineHeight": 22, "fontWeight": "regular" },
+    "caption": { "fontSize": 12, "lineHeight": 18, "fontWeight": "regular" },
+    "micro": {
+      "fontSize": 10,
+      "lineHeight": 14,
+      "fontWeight": "medium",
+      "letterSpacing": 0.2
+    }
+  },
+  "spacing": {
+    "xs": 4,
+    "sm": 8,
+    "md": 12,
+    "lg": 16,
+    "xl": 20,
+    "2xl": 24,
+    "3xl": 32,
+    "4xl": 40,
+    "5xl": 48,
+    "6xl": 64,
+    "7xl": 96,
+    "screenPadding": 20,
+    "cardPadding": 24,
+    "cardGap": 16,
+    "sectionGap": 32
+  },
+  "radius": {
+    "sm": 12,
+    "md": 18,
+    "lg": 24,
+    "xl": 32,
+    "pill": 999
+  },
+  "elevation": {
+    "level1": { "shadowOffsetY": 4, "shadowOpacity": 0.06, "shadowRadius": 10, "elevation": 1 },
+    "level2": { "shadowOffsetY": 8, "shadowOpacity": 0.08, "shadowRadius": 18, "elevation": 3 },
+    "level3": { "shadowOffsetY": 12, "shadowOpacity": 0.12, "shadowRadius": 24, "elevation": 6 },
+    "level4": { "shadowOffsetY": 16, "shadowOpacity": 0.14, "shadowRadius": 28, "elevation": 8 }
+  },
+  "animation": {
+    "duration": { "fast": 200, "normal": 260, "slow": 320 },
+    "easing": {
+      "standard": [0.2, 0, 0, 1],
+      "emphasized": [0.2, 0.8, 0.2, 1]
+    }
+  },
+  "layout": {
+    "breakpoint": {
+      "smallPhone": 360,
+      "largePhone": 414,
+      "tablet": 768
+    },
+    "contentMaxWidth": {
+      "phone": 640,
+      "tablet": 920
+    },
+    "touchTargetMin": 48
+  },
+  "icons": {
+    "strokeWidth": 2,
+    "size": {
+      "sm": 16,
+      "md": 20,
+      "lg": 24,
+      "xl": 32
+    }
+  },
+  "colors": {
+    "light": {
+      "background": "#F8FAFC",
+      "surface": "#FFFFFF",
+      "card": "#FFFFFF",
+      "border": "#E5E7EB",
+      "divider": "#E2E8F0",
+      "primary": "#4F46E5",
+      "primaryHover": "#4338CA",
+      "primaryPressed": "#3730A3",
+      "secondary": "#E2E8F0",
+      "accent": "#4F46E5",
+      "textPrimary": "#0F172A",
+      "textSecondary": "#64748B",
+      "textDisabled": "#94A3B8",
+      "success": "#22C55E",
+      "warning": "#F59E0B",
+      "danger": "#EF4444",
+      "info": "#3B82F6"
+    },
+    "dark": {
+      "background": "#09090B",
+      "surface": "#18181B",
+      "card": "#1E1E21",
+      "border": "#2A2A2E",
+      "divider": "#2A2A2E",
+      "primary": "#6366F1",
+      "primaryHover": "#818CF8",
+      "primaryPressed": "#4F46E5",
+      "secondary": "#27272A",
+      "accent": "#6366F1",
+      "textPrimary": "#FAFAFA",
+      "textSecondary": "#A1A1AA",
+      "textDisabled": "#71717A",
+      "success": "#22C55E",
+      "warning": "#FBBF24",
+      "danger": "#F87171",
+      "info": "#60A5FA"
+    },
+    "amoled": {
+      "background": "#000000",
+      "surface": "#050505",
+      "card": "#101010",
+      "border": "#1B1B1B",
+      "divider": "#1B1B1B",
+      "primary": "#818CF8",
+      "primaryHover": "#A5B4FC",
+      "primaryPressed": "#6366F1",
+      "secondary": "#111111",
+      "accent": "#818CF8",
+      "textPrimary": "#FFFFFF",
+      "textSecondary": "#B3B3B3",
+      "textDisabled": "#666666",
+      "success": "#22C55E",
+      "warning": "#FBBF24",
+      "danger": "#F87171",
+      "info": "#60A5FA"
+    }
+  }
+}

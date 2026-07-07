@@ -1,6 +1,10 @@
-import type { FontWeightTokens, TypographyScale } from "@/types/theme";
+import { primitives } from "@/constants/theme/primitives";
+import type { FontFamilyTokens, FontWeightTokens, TypographyScale } from "@/types/theme";
 
-const fontFamily = "System";
+export const fontFamilies: FontFamilyTokens = {
+  preferred: primitives.preferredFontFamily,
+  sans: primitives.fallbackFontFamily,
+};
 
 export const fontWeights: FontWeightTokens = {
   light: "300",
@@ -11,72 +15,24 @@ export const fontWeights: FontWeightTokens = {
   extraBold: "800",
 };
 
-export const typography: TypographyScale = {
-  displayXL: {
-    fontFamily,
-    fontSize: 48,
-    lineHeight: 56,
-    fontWeight: fontWeights.extraBold,
-  },
-  displayL: {
-    fontFamily,
-    fontSize: 40,
-    lineHeight: 48,
-    fontWeight: fontWeights.bold,
-  },
-  displayM: {
-    fontFamily,
-    fontSize: 34,
-    lineHeight: 42,
-    fontWeight: fontWeights.bold,
-  },
-  headingXL: {
-    fontFamily,
-    fontSize: 30,
-    lineHeight: 38,
-    fontWeight: fontWeights.bold,
-  },
-  headingL: {
-    fontFamily,
-    fontSize: 24,
-    lineHeight: 32,
-    fontWeight: fontWeights.semiBold,
-  },
-  headingM: {
-    fontFamily,
-    fontSize: 20,
-    lineHeight: 28,
-    fontWeight: fontWeights.semiBold,
-  },
-  title: {
-    fontFamily,
-    fontSize: 18,
-    lineHeight: 26,
-    fontWeight: fontWeights.medium,
-  },
-  bodyLarge: {
-    fontFamily,
-    fontSize: 16,
-    lineHeight: 24,
-    fontWeight: fontWeights.regular,
-  },
-  body: {
-    fontFamily,
-    fontSize: 14,
-    lineHeight: 22,
-    fontWeight: fontWeights.regular,
-  },
-  caption: {
-    fontFamily,
-    fontSize: 12,
-    lineHeight: 18,
-    fontWeight: fontWeights.regular,
-  },
-  micro: {
-    fontFamily,
-    fontSize: 10,
-    lineHeight: 14,
-    fontWeight: fontWeights.medium,
-    letterSpacing: 0.2,
-  },
+type PrimitiveFontScaleValue = {
+  fontSize: number;
+  lineHeight: number;
+  fontWeight: keyof FontWeightTokens;
+  letterSpacing?: number;
 };
+
+export const typography = Object.fromEntries(
+  (Object.entries(primitives.fontScale) as [keyof TypographyScale, PrimitiveFontScaleValue][]).map(
+    ([key, value]) => [
+      key,
+      {
+        fontFamily: fontFamilies.sans,
+        fontSize: value.fontSize,
+        lineHeight: value.lineHeight,
+        fontWeight: fontWeights[value.fontWeight],
+        ...(value.letterSpacing ? { letterSpacing: value.letterSpacing } : {}),
+      },
+    ],
+  ),
+) as TypographyScale;

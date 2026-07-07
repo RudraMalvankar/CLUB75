@@ -1,13 +1,10 @@
+import { primitives } from "@/constants/theme/primitives";
 import type { AnimationTokens } from "@/types/theme";
 
 export const animation: AnimationTokens = {
-  duration: {
-    fast: 200,
-    normal: 260,
-    slow: 320,
-  },
+  duration: primitives.animation.duration,
   easing: {
-    standard: [0.2, 0, 0, 1],
-    emphasized: [0.2, 0.8, 0.2, 1],
+    standard: primitives.animation.easing.standard as [number, number, number, number],
+    emphasized: primitives.animation.easing.emphasized as [number, number, number, number],
   },
 };

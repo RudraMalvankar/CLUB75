@@ -1,5 +1,7 @@
+import "@/global.css";
 import "react-native-gesture-handler";
 
+import { NavigationBar } from "expo-navigation-bar";
 import { Stack } from "expo-router";
 import { StatusBar } from "expo-status-bar";
 
@@ -11,6 +13,7 @@ function RootNavigator() {
   return (
     <>
       <StatusBar style={theme.statusBar} />
+      <NavigationBar hidden={false} style={theme.isDark ? "dark" : "light"} />
       <Stack
         screenOptions={{
           headerShown: false,
