@@ -10,7 +10,7 @@ export default defineConfig({
   test: {
     globals: true,
     environment: "node",
-    include: ["database/tests/**/*.test.ts"],
+    include: ["database/tests/**/*.test.ts", "engine/**/*.test.ts"],
     testTimeout: 15_000,
     hookTimeout: 15_000,
     server: {
