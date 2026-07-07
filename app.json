@@ -27,7 +27,8 @@
           "hidden": false,
           "style": "light"
         }
-      ]
+      ],
+      "expo-sqlite"
     ],
     "ios": {
       "supportsTablet": true
