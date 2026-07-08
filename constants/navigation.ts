@@ -4,6 +4,7 @@ export const NAVIGATION = {
     ATTENDANCE: "attendance",
     TIMETABLE: "timetable",
     ANALYTICS: "analytics",
+    SIMULATOR: "simulator",
     SETTINGS: "settings",
   } as const,
   MODALS: {

@@ -55,6 +55,13 @@ export default function TabsLayout() {
         }}
       />
       <Tabs.Screen
+        name={NAVIGATION.TABS.SIMULATOR}
+        options={{
+          title: "Simulator",
+          tabBarIcon: ({ color }) => <Text style={{ color, fontSize: 20 }}>🎯</Text>,
+        }}
+      />
+      <Tabs.Screen
         name={NAVIGATION.TABS.SETTINGS}
         options={{
           title: "Settings",
