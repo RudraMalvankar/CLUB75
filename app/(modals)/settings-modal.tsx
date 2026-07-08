@@ -1,8 +1,9 @@
-import { View, Text, Pressable } from "react-native";
+import { Pressable, View } from "react-native";
 import { useRouter } from "expo-router";
-
+import { Text } from "@/components/ui/typography/Text";
 import { useTheme } from "@/hooks/useTheme";
 import { SafeArea } from "@/components/layout/SafeArea";
+import { SettingsScreen } from "@/features/settings";
 
 export default function SettingsModal() {
   const { theme } = useTheme();
@@ -17,16 +18,14 @@ export default function SettingsModal() {
           paddingBottom: theme.spacing.lg,
         }}
       >
-        <Text className="text-heading-m font-semibold text-foreground">Settings</Text>
+        <Text variant="bodyLarge">Settings</Text>
         <Pressable onPress={() => router.back()}>
-          <Text className="text-body font-medium text-primary">Done</Text>
+          <Text variant="body" className="font-semibold" style={{ color: theme.colors.primary }}>
+            Done
+          </Text>
         </Pressable>
       </View>
-      <View className="flex-1 items-center justify-center">
-        <Text className="text-body text-foreground-muted">
-          Settings modal — Phase 7 placeholder
-        </Text>
-      </View>
+      <SettingsScreen />
     </SafeArea>
   );
 }
