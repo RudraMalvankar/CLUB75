@@ -1,19 +1,45 @@
-import { View, Text } from "react-native";
+import { useCallback, useEffect, useState } from "react";
 
-import { useTheme } from "@/hooks/useTheme";
 import { Screen } from "@/components/layout/Screen";
+import { TimetableScreen } from "@/features/timetable/screens/TimetableScreen";
+import { getDatabase } from "@/database/database";
+import { SemesterRepository } from "@/database/repositories";
+import type { TimetableLecture } from "@/features/timetable/types";
 
-export default function TimetableScreen() {
-  const { theme } = useTheme();
+export default function TimetableTab() {
+  const [semesterId, setSemesterId] = useState<string | null>(null);
+
+  useEffect(() => {
+    const loadSemester = async () => {
+      try {
+        const db = getDatabase();
+        const semesterRepo = new SemesterRepository(db);
+        const semesters = await semesterRepo.getAll();
+        setSemesterId(semesters[0]?.id ?? null);
+      } catch {
+        setSemesterId(null);
+      }
+    };
+    loadSemester();
+  }, []);
+
+  const handleCreateTimetable = useCallback(() => {
+    // Navigation will be handled by Expo Router
+    console.log("Navigate to create timetable");
+  }, []);
+
+  const handleLecturePress = useCallback((lecture: TimetableLecture) => {
+    // Navigation will be handled by Expo Router
+    console.log("Navigate to lecture:", lecture.id);
+  }, []);
 
   return (
     <Screen>
-      <View className="flex-1 items-center justify-center">
-        <Text className="text-heading-m font-semibold text-foreground">Timetable</Text>
-        <Text className="text-body text-foreground-muted" style={{ marginTop: theme.spacing.sm }}>
-          Milestone: Phase 7 — Navigation Shell
-        </Text>
-      </View>
+      <TimetableScreen
+        semesterId={semesterId}
+        onCreateTimetable={handleCreateTimetable}
+        onLecturePress={handleLecturePress}
+      />
     </Screen>
   );
 }
