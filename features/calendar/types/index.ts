@@ -1,5 +1,8 @@
-import type { DayOfWeek } from "@/database/helpers";
-import type { AttendanceStatus } from "@/database/schema/attendance";
+import type { DAY_OF_WEEK_VALUES, ATTENDANCE_STATUS_VALUES } from "@/database/helpers";
+
+type DayOfWeek = (typeof DAY_OF_WEEK_VALUES)[number];
+type AttendanceStatus = (typeof ATTENDANCE_STATUS_VALUES)[number];
+export type CalendarEventStatus = AttendanceStatus | null;
 
 export type CalendarView = "month" | "week" | "day" | "agenda";
 

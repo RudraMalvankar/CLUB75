@@ -10,6 +10,7 @@ import type {
   AgendaItem,
   CalendarMonthSummary,
   CalendarWeekSummary,
+  CalendarEventStatus,
 } from "../types";
 import { CALENDAR_EVENT_COLORS } from "../types";
 
@@ -58,7 +59,7 @@ export class CalendarService {
         room: null,
         faculty: subject?.faculty ?? null,
         lectureType: "lecture",
-        status: record.status,
+        status: record.status as CalendarEventStatus,
         notes: record.notes,
         attendanceId: record.id,
         timetableEntryId: record.timetableEntryId,
@@ -89,7 +90,7 @@ export class CalendarService {
         room: null,
         faculty: subject?.faculty ?? null,
         lectureType: "lecture",
-        status: record.status,
+        status: record.status as CalendarEventStatus,
         notes: record.notes,
         attendanceId: record.id,
         timetableEntryId: record.timetableEntryId,
@@ -149,21 +150,26 @@ export class CalendarService {
     const records = await this.attendanceRepo.getByDateRange(date, date);
     if (records.length === 0) return null;
 
+    const present = records.filter((r) => r.status === "present").length;
+    const extraLecture = records.filter((r) => r.status === "extraLecture").length;
+    const cancelled = records.filter((r) => r.status === "cancelled").length;
+    const holiday = records.filter((r) => r.status === "holiday").length;
+
+    const attended = present + extraLecture;
+    const total = records.length - cancelled - holiday;
+    const attendancePercentage = total > 0 ? Math.round((attended / total) * 100) : 0;
+
     const summary: AttendanceSummary = {
       date,
       totalLectures: records.length,
-      present: records.filter((r) => r.status === "present").length,
+      present,
       absent: records.filter((r) => r.status === "absent").length,
-      cancelled: records.filter((r) => r.status === "cancelled").length,
+      cancelled,
       medical: records.filter((r) => r.status === "medical").length,
-      holiday: records.filter((r) => r.status === "holiday").length,
-      extraLecture: records.filter((r) => r.status === "extraLecture").length,
-      attendancePercentage: 0,
+      holiday,
+      extraLecture,
+      attendancePercentage,
     };
-
-    const attended = summary.present + summary.extraLecture;
-    const total = summary.totalLectures - summary.cancelled - summary.holiday;
-    summary.attendancePercentage = total > 0 ? Math.round((attended / total) * 100) : 0;
 
     return summary;
   }

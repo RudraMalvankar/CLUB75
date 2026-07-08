@@ -40,8 +40,8 @@ function RootNavigator() {
         <Stack.Screen name="(onboarding)" options={{ presentation: "fullScreenModal" }} />
         <Stack.Screen name="(modals)/settings-modal" options={{ presentation: "modal" }} />
         <Stack.Screen name="(modals)/subject-modal" options={{ presentation: "modal" }} />
-        <Stack.Screen name="+not-found" />
-        <Stack.Screen name="+error" />
+        <Stack.Screen name="not-found" />
+        <Stack.Screen name="error" />
       </Stack>
     </>
   );
