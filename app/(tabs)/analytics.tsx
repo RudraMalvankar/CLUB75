@@ -1,19 +1,10 @@
-import { View, Text } from "react-native";
-
-import { useTheme } from "@/hooks/useTheme";
 import { Screen } from "@/components/layout/Screen";
+import { AnalyticsScreen } from "@/features/analytics/screens/AnalyticsScreen";
 
-export default function AnalyticsScreen() {
-  const { theme } = useTheme();
-
+export default function AnalyticsTab() {
   return (
     <Screen>
-      <View className="flex-1 items-center justify-center">
-        <Text className="text-heading-m font-semibold text-foreground">Analytics</Text>
-        <Text className="text-body text-foreground-muted" style={{ marginTop: theme.spacing.sm }}>
-          Milestone: Phase 7 — Navigation Shell
-        </Text>
-      </View>
+      <AnalyticsScreen />
     </Screen>
   );
 }
