@@ -61,6 +61,13 @@ export default function TabsLayout() {
           tabBarIcon: ({ color }) => <Text style={{ color, fontSize: 20 }}>⚙️</Text>,
         }}
       />
+      <Tabs.Screen
+        name="playground"
+        options={{
+          title: "Playground",
+          tabBarIcon: ({ color }) => <Text style={{ color, fontSize: 20 }}>🧪</Text>,
+        }}
+      />
     </Tabs>
   );
 }
