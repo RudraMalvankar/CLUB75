@@ -1,9 +1,4 @@
-import type {
-  AttendanceCategory,
-  AttendanceStatus,
-  AttendanceStatusLevel,
-  RiskLevel,
-} from "./enums";
+import type { AttendanceCategory, AttendanceStatusLevel, RiskLevel } from "./enums";
 
 export interface AttendanceResult {
   readonly percentage: number;

@@ -48,7 +48,7 @@ export function LectureFormScreen({
     if (formData.day && formData.startTime && formData.endTime) {
       void checkConflicts(semesterId, formData, initialData?.id);
     }
-  }, [formData.day, formData.startTime, formData.endTime, semesterId, initialData?.id]);
+  }, [checkConflicts, formData, semesterId, initialData?.id]);
 
   const handleSubmit = async () => {
     let lecture: TimetableLecture | null;

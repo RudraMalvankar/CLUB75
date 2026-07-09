@@ -1,13 +1,13 @@
-import { ScrollView, View } from "react-native";
+import { ScrollView } from "react-native";
 
 import { useTheme } from "@/hooks/useTheme";
 import { Screen } from "@/components/layout/Screen";
 import { Heading } from "@/components/ui/typography/Heading";
 import { Text } from "@/components/ui/typography/Text";
 import { Caption } from "@/components/ui/typography/Caption";
-import { Label } from "@/components/ui/typography/Label";
+
 import { Button } from "@/components/ui/button/Button";
-import { IconButton } from "@/components/ui/button/IconButton";
+
 import { Card, CardHeader, CardContent, CardFooter } from "@/components/ui/card";
 import { Input } from "@/components/ui/input/Input";
 import { Textarea } from "@/components/ui/textarea/Textarea";

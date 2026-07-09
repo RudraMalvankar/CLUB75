@@ -1,4 +1,4 @@
-import { DEFAULT_GOAL_PERCENTAGE, STATUS_LEVEL_THRESHOLDS } from "../constants";
+import { STATUS_LEVEL_THRESHOLDS } from "../constants";
 import type { SimulationInput } from "../types/models";
 import type { SimulationResult } from "../types/results";
 import { AttendanceStatusLevel } from "../types/enums";

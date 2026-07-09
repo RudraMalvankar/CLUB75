@@ -1,8 +1,6 @@
 import {
   ABSENT_STATUSES,
   COUNTED_STATUSES,
-  DEFAULT_GOAL_PERCENTAGE,
-  PERCENTAGE_MULTIPLIER,
   PRESENT_STATUSES,
   STATUS_LEVEL_THRESHOLDS,
 } from "../constants";
@@ -17,7 +15,6 @@ import type {
 } from "../types/results";
 import { AttendanceStatusLevel, RiskLevel } from "../types/enums";
 import { calculatePercentage, countStatuses, roundToDefault, safeDivide } from "../helpers/math";
-import { safeNumber } from "../helpers/validation";
 
 function getStatusLevel(percentage: number): AttendanceStatusLevel {
   if (percentage >= STATUS_LEVEL_THRESHOLDS.excellent) return AttendanceStatusLevel.Excellent;

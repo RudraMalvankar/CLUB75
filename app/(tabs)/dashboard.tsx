@@ -4,7 +4,7 @@ import { useTheme } from "@/hooks/useTheme";
 import { Screen } from "@/components/layout/Screen";
 import { Heading } from "@/components/ui/typography/Heading";
 import { Button } from "@/components/ui/button/Button";
-import { Spacer } from "@/components/ui/layout/Spacer";
+
 import { Stack } from "@/components/ui/layout/Stack";
 import { useDashboardData } from "@/features/dashboard/useDashboardData";
 import {

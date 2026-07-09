@@ -10,7 +10,7 @@ import {
   calculateSimulation,
 } from "../index";
 import type { AttendanceRecord } from "../types/models";
-import { AttendanceStatusLevel, AttendanceCategory, RiskLevel } from "../types/enums";
+import { AttendanceStatusLevel } from "../types/enums";
 
 function makeRecord(overrides: Partial<AttendanceRecord> = {}): AttendanceRecord {
   return {

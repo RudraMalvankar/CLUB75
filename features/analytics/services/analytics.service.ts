@@ -139,7 +139,7 @@ export class AnalyticsService {
   }
 
   private buildSummary(statistics: any, semester: any): AttendanceSummary {
-    const { overall, streaks, trends } = statistics;
+    const { overall, streaks } = statistics;
     const percentage = overall.attendancePercentage;
     const goal = semester.minimumAttendance ?? 75;
 

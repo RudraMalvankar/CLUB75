@@ -1,4 +1,4 @@
-import { DEFAULT_GOAL_PERCENTAGE, PERCENTAGE_MULTIPLIER } from "../constants";
+import { PERCENTAGE_MULTIPLIER } from "../constants";
 import type { PredictionInput } from "../types/models";
 import type { PredictionResult, PredictionScenario } from "../types/results";
 import { roundToDefault, safeDivide } from "../helpers/math";

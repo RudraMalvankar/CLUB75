@@ -15,4 +15,10 @@ module.exports = defineConfig([
       },
     },
   },
+  {
+    files: ["engine/attendance/types/enums.ts"],
+    rules: {
+      "@typescript-eslint/no-redeclare": "off",
+    },
+  },
 ]);

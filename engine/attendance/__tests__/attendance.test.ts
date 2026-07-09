@@ -9,7 +9,7 @@ import {
   filterRecordsByDateRange,
 } from "../calculators/attendance";
 import type { AttendanceRecord } from "../types/models";
-import { AttendanceStatusLevel, AttendanceCategory } from "../types/enums";
+import { AttendanceStatusLevel } from "../types/enums";
 
 function makeRecord(overrides: Partial<AttendanceRecord> = {}): AttendanceRecord {
   return {

@@ -2,11 +2,8 @@ import {
   ABSENT_STATUSES,
   COUNTED_STATUSES,
   DEFAULT_GOAL_PERCENTAGE,
-  MAXIMUM_ATTENDANCE_PERCENTAGE,
-  MINIMUM_ATTENDANCE_PERCENTAGE,
   PRESENT_STATUSES,
   STATUS_LEVEL_THRESHOLDS,
-  UNCOUNTED_STATUSES,
 } from "../constants";
 import type { AttendanceInput, AttendanceRecord, SubjectAttendanceInput } from "../types/models";
 import type { AttendanceResult } from "../types/results";
