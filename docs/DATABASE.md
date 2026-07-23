@@ -1,4 +1,4 @@
-# 🗄 Club75 Database Design
+like it shoudl f# 🗄 Club75 Database Design
 
 Version: 1.0
 
